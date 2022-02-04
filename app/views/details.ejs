@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="/css/reset.css">
+        <link rel="stylesheet" href="/css/style.css">
+
+        <title>Document</title>
+    </head>
+    <body>
+        <header>
+            <div class="header">
+                <a href="/">
+                    <h1 class="header_h1">Pokédex</h1>
+                </a>
+                <nav>
+                    <a class="nav_liste" href="/favoris">Favoris</a>
+                    <a href="/types">Types</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+                <h2 class="h2Detail">Détails de <%=pokemon.nom%></h2>
+                <div class="detail">
+                    <img class="imageDetail" src="/img/<%=pokemon.numero%>.png" alt="<%= pokemon.nom %>">
+                    <a href="/favoris/<%= pokemon.numero %> ">
+                        <div class="ajoutFav">Fav</div>
+                    </a>
+                    <div class="pokemonDetail">
+                        <h3 class="h3Detail">#<%= pokemon.numero %> <%=pokemon.nom%></h3>
+                        <h4 class="h4Detail">Statistiques</h4>
+                        <ul>
+                            <li>
+                                <label for="PV">PV : <%=pokemon.pv%></label>
+                                <progress id="PV" max="255" value="<%=pokemon.pv%>"> <%=pokemon.pv%> </progress>
+                            </li>
+                            <li>
+                                <label for="Attaque">Attaque : <%=pokemon.attaque%></label>
+                                <progress id="Attaque" max="255" value="<%=pokemon.attaque%>"> <%=pokemon.attaque%> </progress>
+                            </li>
+                            <li>
+                                <label for="Défense">Défense : <%=pokemon.defense%></label>
+                                <progress id="Défense" max="255" value="<%=pokemon.defense%>"> <%=pokemon.defense%> </progress>
+                            </li>
+                            <li>
+                                <label for="Attaque Spé.">Attaque Spé : <%=pokemon.attaque_spe%></label>
+                                <progress id="Attaque Spé." max="255" value="<%=pokemon.attaque_spe%>"> <%=pokemon.attaque_spe%> </progress>
+                            </li>
+                            <li>
+                                <label for="Défense spé.">Défense spé : <%=pokemon.defense_spe%></label>
+                                <progress id="Défense spé." max="255" value="<%=pokemon.defense_spe%>"> <%=pokemon.defense_spe%> </progress>
+                            </li>
+                            <li>
+                                <label for="Vitesse">Vitesse : <%=pokemon.vitesse%></label>
+                                <progress id="Vitesse" max="255" value="<%=pokemon.vitesse%>"> <%=pokemon.vitesse%> </progress>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <a class="retourList" href="/">Revenir à la liste</a>
+        </main>
+
+    </body>
+</html>
